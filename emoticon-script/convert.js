@@ -10,20 +10,15 @@ const Mustache = require('mustache');
 let name, expression, dialog, view;
 let firstCharacter = null;
 
-let parsedLines = [];
-
-lines.forEach((line) => {
-  // No blank lines.
-  if (line.length === 0) {
-    return;
-  }
-
+const parsedLines = lines.filter(line => line.length > 0).map((line) => {
   // Split character from dialog.
   line = line.split(' - ');
   dialog = line[1];
+  
   // Split name from expression.
   name = line[0].split(' ')[0];
   expression = line[0].split(' ')[1].slice(1, -1).toLowerCase();
+  
   // Generate Mustache Template
   view = {
     character_name: name,
@@ -31,10 +26,9 @@ lines.forEach((line) => {
     character_dialog: dialog,
     character_expression: `${name.toLowerCase()}_${expression}`,
   }
-  parsedLines.push(
-    Mustache.render(
-      determineDirection(name) === 'left' ? leftEmoticonTemplate : rightEmoticonTemplate, view
-    )
+
+  return Mustache.render(
+    determineDirection(name) === 'left' ? leftEmoticonTemplate : rightEmoticonTemplate, view
   );
 });
 
