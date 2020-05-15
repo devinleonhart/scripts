@@ -1,0 +1,15 @@
+{
+  "name": "emoticon-generator",
+  "version": "1.0.0",
+  "description": "Combine emoticon pieces into a different emoticons.",
+  "main": "emote.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "merge-images": "^2.0.0"
+  }
+}
