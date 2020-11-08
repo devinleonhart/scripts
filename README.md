@@ -1,7 +1,15 @@
-# Simple Scripts
+# Scripts
 
 Useful scripts that aren't worth being a whole project.
 
-# Flight Scraper
+## Emoticon Generator
+
+Generate emoticons from different files.
+
+## Emoticon Script
+
+Add emoticon code to article scripts.
+
+## Flight Scraper
 
 Check for certain flights at [AA](https://www.aa.com/).
