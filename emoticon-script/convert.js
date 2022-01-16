@@ -13,11 +13,11 @@ const parsedLines = lines.filter(line => line.length > 0).map((line) => {
   // Split character from dialog.
   line = line.split(' - ');
   dialog = line[1];
-  
+
   // Split name from expression.
   name = line[0].split(' ')[0];
   expression = line[0].split(' ')[1].slice(1, -1).toLowerCase();
-  
+
   // Generate Mustache Template
   view = {
     character: name.toLowerCase(),
